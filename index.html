@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار عبود وفطوم 🎀</title>
+    <style>
+        :root {
+            --burgundy: #800020;
+            --burgundy-dark: #580016;
+            --beige-bg: #fdfbf7;
+            --beige-card: #f5efe6;
+            --beige-border: #e6d7c3;
+            --text-color: #3d0010;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--beige-bg);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: var(--beige-card);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(128, 0, 32, 0.15);
+            padding: 30px;
+            max-width: 650px;
+            width: 100%;
+            border: 2px solid var(--beige-border);
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: var(--burgundy);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .step {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        input[type="email"], textarea {
+            width: 90%;
+            padding: 12px 15px;
+            border: 2px solid var(--beige-border);
+            border-radius: 12px;
+            font-size: 15px;
+            margin-bottom: 15px;
+            outline: none;
+            background-color: #fff;
+            transition: 0.3s;
+        }
+
+        input[type="email"]:focus, textarea:focus {
+            border-color: var(--burgundy);
+            box-shadow: 0 0 8px rgba(128, 0, 32, 0.2);
+        }
+
+        .btn {
+            background-color: var(--burgundy);
+            color: #fff;
+            border: none;
+            padding: 12px 35px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: var(--burgundy-dark);
+            transform: scale(1.03);
+        }
+
+        .question-block {
+            text-align: right;
+            background: #fff;
+            padding: 18px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--beige-border);
+        }
+
+        .options-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--beige-bg);
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid var(--beige-border);
+        }
+
+        .option-label:hover {
+            background: #eee3d3;
+        }
+
+        .summary-item {
+            text-align: right;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border-right: 4px solid var(--burgundy);
+        }
+
+        .summary-item strong {
+            color: var(--burgundy);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- الخطوة 1: أدخل البريد الإلكتروني -->
+        <div id="step-1" class="step active">
+            <h2>أهلاً وسهلاً 🍷✨</h2>
+            <p>الرجاء إدخال بريدك الإلكتروني للمتابعة:</p>
+            <input type="email" id="user-email" placeholder="مثال: example@gmail.com" required>
+            <br>
+            <button class="btn" onclick="goToStep2()">متابعة ➔</button>
+        </div>
+
+        <!-- الخطوة 2: الرسالة الترحيبية وبدء التجربة -->
+        <div id="step-2" class="step">
+            <h2>مرحباً بكِ معنا 🌸</h2>
+            <p>جاهزة لنبدأ رحلة الأسئلة الممتعة والجميلة؟ اضغطي على زر البدء للإنطلاق!</p>
+            <button class="btn" style="font-size: 20px; padding: 15px 45px;" onclick="startQuiz()">أبدء 🎉</button>
+        </div>
+
+        <!-- الخطوة 3: الفقرة الأولى (أسئلة عن عبود) -->
+        <div id="step-3" class="step">
+            <h2>[الفقرة الأولى: أسئلة عن عبود] ☕</h2>
+            
+            <div class="question-block">
+                <p>1. كم عمر عبود بالميلادي؟</p>
+                <div class="options-group">
+                    <label class="option-label"><input type="radio" name="q1" value="أ- 16"> أ- 16</label>
+                    <label class="option-label"><input type="radio" name="q1" value="ب- 17"> ب- 17</label>
+                    <label class="option-label"><input type="radio" name="q1" value="ج- 18"> ج- 18</label>
+                    <label class="option-label"><input type="radio" name="q1" value="د- 19"> د- 19</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p>2. ايش أكثر مشروب يحبه عبود؟</p>
+                <div class="options-group">
+                    <label class="option-label"><input type="radio" name="q2" value="أ- ماتشا"> أ- ماتشا</label>
+                    <label class="option-label"><input type="radio" name="q2" value="ب- قهوة v60"> ب- قهوة v60</label>
+                    <label class="option-label"><input type="radio" name="q2" value="ج- ايس تي"> ج- ايس تي</label>
+                    <label class="option-label"><input type="radio" name="q2" value="د- قهوة تركية"> د- قهوة تركية</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p>3. ايش الحلم الوظيفي الي يبيه عبود؟</p>
+                <div class="options-group">
+                    <label class="option-label"><input type="radio" name="q3" value="أ- أمن سيبراني"> أ- أمن سيبراني</label>
+                    <label class="option-label"><input type="radio" name="q3" value="ب- دكتور"> ب- دكتور</label>
+                    <label class="option-label"><input type="radio" name="q3" value="ج- إدارة أعمال"> ج- إدارة أعمال</label>
+                    <label class="option-label"><input type="radio" name="q3" value="د- عسكري"> د- عسكري</label>
+                </div>
+            </div>
+
+            <button class="btn" onclick="goToStep4()">التالي (الفقرة الثانية) ➔</button>
+        </div>
+
+        <!-- الخطوة 4: الفقرة الثانية (أسئلة عن فطوم) -->
+        <div id="step-4" class="step">
+            <h2>[الفقرة الثانية: أسئلة عن فطوم🎀]</h2>
+
+            <div class="question-block">
+                <p>1. أكثر شيء تحبيه في عبود؟</p>
+                <textarea id="q4" rows="3" placeholder="اكتبي إجابتكِ هنا..."></textarea>
+            </div>
+
+            <div class="question-block">
+                <p>2. ايش توقعاتك لحياتك بعد ٥ سنوات؟</p>
+                <textarea id="q5" rows="3" placeholder="اكتبي إجابتكِ هنا..."></textarea>
+            </div>
+
+            <div class="question-block">
+                <p>3. أكثر ثلاث أشخاص تعزهم غير عبود؟</p>
+                <textarea id="q6" rows="3" placeholder="اكتبي الثلاثة أشخاص..."></textarea>
+            </div>
+
+            <button class="btn" onclick="goToStep5()">التالي (الفقرة الثالثة) ➔</button>
+        </div>
+
+        <!-- الخطوة 5: الفقرة الثالثة (أسئلة علاقتنا) -->
+        <div id="step-5" class="step">
+            <h2>[الفقرة الثالثة: أسئلة علاقتنا] ❤️</h2>
+
+            <div class="question-block">
+                <p>1. ايش أكثر موقف صار بينا مستحيل تنسيه (تقدرين تكتبين أكثر من موقف)؟</p>
+                <textarea id="q7" rows="3" placeholder="اكتبي المواقف هنا..."></textarea>
+            </div>
+
+            <div class="question-block">
+                <p>2. هل ممكن في هالفترة أو الفترة القادمة تسمحي لعبود يحول لك فلوس؟</p>
+                <div class="options-group">
+                    <label class="option-label"><input type="radio" name="q8" value="أ- اي"> أ- اي</label>
+                    <label class="option-label"><input type="radio" name="q8" value="ب- لا"> ب- لا</label>
+                    <label class="option-label"><input type="radio" name="q8" value="ج- من الممكن"> ج- من الممكن</label>
+                    <label class="option-label"><input type="radio" name="q8" value="د- على الاغلب لا"> د- على الاغلب لا</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p>3. أكثر شيء يميز علاقتنا من وجهة نظرك؟</p>
+                <textarea id="q9" rows="3" placeholder="اكتبي رأيك هنا..."></textarea>
+            </div>
+
+            <button class="btn" onclick="goToFinish()">إنهاء الاختبار ✨</button>
+        </div>
+
+        <!-- الخطوة 6: الختام والنتيجة -->
+        <div id="step-6" class="step">
+            <h2>شكراً لكِ من القلب! ❤️</h2>
+            <p>تم حفظ إجاباتكِ بنجاح، وستُرسل الإجابات إلى البريد الإلكتروني المسجل:</p>
+            <p style="font-weight: bold; color: var(--burgundy);" id="display-email"></p>
+            <p>يمكنكِ الآن الضغط على الزر أدناه لمراجعة كافة الأسئلة والإجابات مباشرة.</p>
+            
+            <button class="btn" style="background-color: #2a9d8f;" onclick="showResults()">تحقق من الإجابة 📋</button>
+        </div>
+
+        <!-- الخطوة 7: صفحة عرض النتائج الكاملة -->
+        <div id="step-7" class="step">
+            <h2>نتائج الاختبار والمنظور الكامل 📝</h2>
+            <div id="results-content"></div>
+            <button class="btn" onclick="location.reload()">إعادة الاختبار 🔄</button>
+        </div>
+
+    </div>
+
+    <script>
+        let userEmail = "";
+
+        function goToStep2() {
+            const emailInput = document.getElementById('user-email').value;
+            if(!emailInput || !emailInput.includes('@')) {
+                alert('الرجاء إدخال بريد إلكتروني صحيح!');
+                return;
+            }
+            userEmail = emailInput;
+            switchStep('step-1', 'step-2');
+        }
+
+        function startQuiz() {
+            // تشغيل صوت ترفيهي بسيط (Audio Context)
+            playFunSound();
+            switchStep('step-2', 'step-3');
+        }
+
+        function goToStep4() {
+            switchStep('step-3', 'step-4');
+        }
+
+        function goToStep5() {
+            switchStep('step-4', 'step-5');
+        }
+
+        function goToFinish() {
+            document.getElementById('display-email').innerText = userEmail;
+            switchStep('step-5', 'step-6');
+        }
+
+        function switchStep(fromId, toId) {
+            document.getElementById(fromId).classList.remove('active');
+            document.getElementById(toId).classList.add('active');
+        }
+
+        function playFunSound() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+                osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.3); // A5
+                gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.3);
+            } catch(e) {
+                console.log("Audio not allowed or supported");
+            }
+        }
+
+        function getRadioValue(name) {
+            const ele = document.getElementsByName(name);
+            for(let i = 0; i < ele.length; i++) {
+                if(ele[i].checked) return ele[i].value;
+            }
+            return "لم يتم الإجابة";
+        }
+
+        function showResults() {
+            const q1 = getRadioValue('q1');
+            const q2 = getRadioValue('q2');
+            const q3 = getRadioValue('q3');
+            
+            const q4 = document.getElementById('q4').value || "لم تُكتب إجابة";
+            const q5 = document.getElementById('q5').value || "لم تُكتب إجابة";
+            const q6 = document.getElementById('q6').value || "لم تُكتب إجابة";
+
+            const q7 = document.getElementById('q7').value || "لم تُكتب إجابة";
+            const q8 = getRadioValue('q8');
+            const q9 = document.getElementById('q9').value || "لم تُكتب إجابة";
+
+            const resultsHTML = `
+                <div class="summary-item">
+                    <strong>البريد الإلكتروني:</strong> ${userEmail}
+                </div>
+                <h3>[الفقرة الأولى: أسئلة عن عبود]</h3>
+                <div class="summary-item">
+                    <strong>1. كم عمر عبود بالميلادي؟</strong><br>
+                    إجابتكِ: ${q1} <br>
+                    <small style="color: green;">(الإجابة الصحيحة: ب- 17)</small>
+                </div>
+                <div class="summary-item">
+                    <strong>2. ايش أكثر مشروب يحبه عبود؟</strong><br>
+                    إجابتكِ: ${q2} <br>
+                    <small style="color: green;">(الإجابة الصحيحة: ب- قهوة v60)</small>
+                </div>
+                <div class="summary-item">
+                    <strong>3. ايش الحلم الوظيفي الي يبيه عبود؟</strong><br>
+                    إجابتكِ: ${q3} <br>
+                    <small style="color: green;">(الإجابة الصحيحة: ج- إدارة أعمال)</small>
+                </div>
+
+                <h3>[الفقرة الثانية: أسئلة عن فطوم🎀]</h3>
+                <div class="summary-item">
+                    <strong>1. أكثر شيء تحبيه في عبود؟</strong><br>
+                    إجابتكِ: ${q4}
+                </div>
+                <div class="summary-item">
+                    <strong>2. ايش توقعاتك لحياتك بعد ٥ سنوات؟</strong><br>
+                    إجابتكِ: ${q5}
+                </div>
+                <div class="summary-item">
+                    <strong>3. أكثر ثلاث أشخاص تعزهم غير عبود؟</strong><br>
+                    إجابتكِ: ${q6}
+                </div>
+
+                <h3>[الفقرة الثالثة: أسئلة علاقتنا]</h3>
+                <div class="summary-item">
+                    <strong>1. أكثر موقف صار بينا مستحيل تنسيه؟</strong><br>
+                    إجابتكِ: ${q7}
+                </div>
+                <div class="summary-item">
+                    <strong>2. هل ممكن هالفترة تسمحي لعبود يحول لك فلوس؟</strong><br>
+                    إجابتكِ: ${q8}
+                </div>
+                <div class="summary-item">
+                    <strong>3. أكثر شيء يميز علاقتنا؟</strong><br>
+                    إجابتكِ: ${q9}
+                </div>
+            `;
+
+            document.getElementById('results-content').innerHTML = resultsHTML;
+            switchStep('step-6', 'step-7');
+        }
+    </script>
+</body>
+</html>
